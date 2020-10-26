@@ -68,7 +68,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: center;
-padding-left: 15px;
+padding-left: 20px;
 @media(min-width:1024px){
   width:50%;
   align-items: center;
