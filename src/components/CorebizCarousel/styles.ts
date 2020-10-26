@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import Background from '../../assets/carousel-background.jpg';
 
+interface DotProps {
+  active?: boolean;
+}
+
 export const Container = styled.div`
   background-image: url(${Background});
   width:100vw;
@@ -12,7 +16,7 @@ export const Container = styled.div`
   position: relative;
 
   @media(max-width: 1023px){
-          background-position-x: right;
+    background-position-x: right;
   }
 
   span {
@@ -73,5 +77,28 @@ padding-left: 20px;
   width:50%;
   align-items: center;
   padding: 0px;
+}
+`;
+
+export const Dot = styled.div<DotProps>`
+  width: 10px;
+  height:10px;
+  border-radius: 50%;
+  background-color: ${props => props.active ? '#F8475F' : '#BDBDBD'};
+  cursor: ${props => props.active ? 'auto' : 'not-allowed'};
+`;
+
+export const DotWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  bottom:20px;
+  left: 50%;
+    transform: translate(-50%, 0);
+  z-index:1;
+
+> div + div {
+  margin-left:8px;
 }
 `;
