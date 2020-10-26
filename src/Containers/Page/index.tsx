@@ -1,4 +1,5 @@
 import React from 'react';
+import CorebizCarousel from '../../components/CorebizCarousel';
 import Header from '../../components/Header';
 
 import { Container } from './styles';
@@ -7,7 +8,7 @@ const Page: React.FC = () => {
   return (
     <Container>
       <Header/>
-      <h1>Page</h1>
+     <CorebizCarousel/>
     </Container>
   );
 };
