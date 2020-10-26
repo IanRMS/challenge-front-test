@@ -1,11 +1,12 @@
 import React from 'react';
+import Page from './Containers/Page';
 import { GlobalStyle } from './Styles/GlobalStyles';
 
 function App() {
   return (
     <>
     <GlobalStyle/>
-    <h1>COREBIZ FRONT TESTE</h1>
+    <Page/>
     </>
   );
 }

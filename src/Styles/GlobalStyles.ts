@@ -9,4 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 *, input, button {
 font-family: 'Nunito', sans-serif;
 }
+
+button {
+  border: none;
+  background: transparent;
+  outline: none;
+}
 `;
