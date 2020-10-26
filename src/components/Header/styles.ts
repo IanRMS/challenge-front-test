@@ -14,15 +14,6 @@ right: 0;
 left: 0;
 padding: 0px 15px;
 
-/* > div {
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 15px;
-} */
-
 @media(min-width:481px){
   flex-direction: row;
   justify-content: center;
@@ -34,6 +25,7 @@ height: 25px;
 
 @media(min-width:1024px){
   margin-right: 20px;
+  height: 41px;
 }
 `;
 
