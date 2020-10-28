@@ -83,7 +83,7 @@ const Products: React.FC = () => {
           <Content>
             <CardsRow>
               {
-                products.length && products.map((item, i) => (
+                products.length > 0 && products.map((item, i) => (
                   <ProductCard key={i}>
 
                     <img alt="" src={item.imageUrl} />
