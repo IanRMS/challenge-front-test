@@ -95,7 +95,7 @@ export const DotWrapper = styled.div`
   position: absolute;
   bottom:20px;
   left: 50%;
-    transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   z-index:1;
 
 > div + div {

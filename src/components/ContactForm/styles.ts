@@ -43,6 +43,37 @@ export const Container = styled.div`
         }
       }
   }
+
+  h3 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    color:#000;
+    text-align: center;
+  }
+
+  h4 {
+    font-weight: 400;
+    line-height: 12px;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+  }
+
+  h4 + button {
+    margin-top:15px;
+    width: 100%;
+    max-width:330px;
+    min-width: 280px;
+    border-radius: 5px;
+    background-color: #000;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    text-align: center;
+    height: 48px;
+    color: #fff;
+  }
 `;
 
 export const InputContainer = styled.div`
