@@ -17,6 +17,8 @@ import SearchIcon from '../../assets/search-icon.svg';
 import UserIcon from '../../assets/user-icon.svg';
 
 const Header: React.FC = () => {
+  const savedProducts = JSON.parse(localStorage.getItem('products'));
+
   return (
     <Container>
         <DrawerButton>
@@ -34,7 +36,7 @@ const Header: React.FC = () => {
         <ShoppingWrapper>
           <img src={ShoppingcarIcon} alt=""/>
           <Badge>
-            <span>2</span>
+            <span>{savedProducts.length}</span>
           </Badge>
         </ShoppingWrapper>
     </Container>

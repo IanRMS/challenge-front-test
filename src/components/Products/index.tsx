@@ -19,6 +19,7 @@ import {
   ProductPriceDetails,
   ProductRate,
 } from './styles';
+
 import OffPrice from '../../assets/off-polygon.svg';
 
 const Products: React.FC = () => {
@@ -63,6 +64,13 @@ const Products: React.FC = () => {
       style: 'currency', currency: 'BRL', minimumFractionDigits: 2});
     return newValue
   };
+
+  const addProductCard = (item: any): void => {
+    let savedProducts = JSON.parse(localStorage.getItem('products'));
+    console.log(savedProducts);
+    savedProducts.push(item);
+    localStorage.setItem('products', JSON.stringify(savedProducts));
+  }
   
     return (
     <Container>
@@ -100,7 +108,7 @@ const Products: React.FC = () => {
                         </ProductPriceDetails>
                         : null
                       }
-                      <button type="button">COMPRAR</button>
+                      <button type="button" onClick={() => addProductCard(item)}>COMPRAR</button>
                     </div>
                   </ProductCard>
                   )
