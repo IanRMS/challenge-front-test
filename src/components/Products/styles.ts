@@ -13,8 +13,23 @@ export const Container = styled.div`
   position: relative;
   background-color: #fff;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  width:100%;
+`;
 
+export const Divider = styled.div`
+  background-color: #C0C0C0;
+  width: 65px;
+  height: 4px;
+  margin: 6px 0px 12px 0px;
+`;
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1024px;
   > h1 {
     font-weight: 900;
     font-size: 20px;
@@ -22,25 +37,55 @@ export const Container = styled.div`
   }
 `;
 
-export const Divider = styled.div`
-  background-color: #C0C0C0;
-  width: 65px;
-  height: 4px;
-  margin: 6px 0px;
-`;
-
 export const Content = styled.div`
+  width: 100%; 
   display: flex;
   flex-direction: row;
-  width: 100%;
-  max-width: 1024px;
   overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+
+    @media(min-width: 769px){
+      display: none;
+    }
+  }
+
+
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 4px;
+  }
+`;
+
+export const CardsRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  > div + div {
+    margin-left: 30px;
+    @media(max-width: 768px) {
+      margin-left: 15px;
+    }
+  }
 `;
 
 export const ProductCard = styled.div<ProductCardProps>`
   width: 216px;
-  margin: 0px 20px;
   position: relative;
+  min-height: 310px;
+  margin-bottom: 10px;
+
+  @media(max-width:768px){
+    width: 135px;
+  }
 
   .flag {
     position: absolute;
@@ -69,6 +114,10 @@ export const ProductCard = styled.div<ProductCardProps>`
       margin-top: 16px;
       transition: 280ms ease-in-out;
       opacity: 0;
+
+      @media(max-width: 768px) {
+        opacity: 1;
+      }
     }
   }
 

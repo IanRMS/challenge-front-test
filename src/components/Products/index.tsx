@@ -6,8 +6,10 @@ import MuiAlert from '@material-ui/lab/Alert'
 import { getProducts } from './services';
 
 import { 
+  CardsRow,
   Container,
   Content,
+  ContentWrapper,
   Divider,
   LoadingContainer,
   ProductCard,
@@ -45,7 +47,7 @@ const Products: React.FC = () => {
     return (
       <ProductRate>
         {[...Array(stars)].map((e, i) => (
-          <FaStar/>
+          <FaStar key={i}/>
         ))}
         {
           [...Array(emptyStars)].map((e, i) => (
@@ -67,42 +69,46 @@ const Products: React.FC = () => {
       {loading && <LoadingContainer>
         <LinearProgress/>
         </LoadingContainer>}
-        <h1>Mais Vendidos</h1>
-        <Divider/>
-        <Content>
-          {
-            products.length && products.map((item, i) => (
-              <ProductCard key={i}>
+        <ContentWrapper>
+          <h1>Mais Vendidos</h1>
+          <Divider/>
+          <Content>
+            <CardsRow>
+              {
+                products.length && products.map((item, i) => (
+                  <ProductCard key={i}>
 
-                <img alt="" src={item.imageUrl} />
-                { item.listPrice && <img alt="" className="flag" src={OffPrice}/>}
-                <div>
-                  <ProductName>{item.productName}</ProductName>
+                    <img alt="" src={item.imageUrl} />
+                    { item.listPrice && <img alt="" className="flag" src={OffPrice}/>}
+                    <div>
+                      <ProductName>{item.productName}</ProductName>
 
-                  {handleStars(item.stars)}
+                      {handleStars(item.stars)}
 
-                  { item.listPrice && 
-                    <ProductListPrice> de {handleMoney(item.listPrice)} </ProductListPrice>
-                  }
+                      { item.listPrice && 
+                        <ProductListPrice> de {handleMoney(item.listPrice)} </ProductListPrice>
+                      }
 
-                  <ProductPrice marginTop={item.listPrice ? 0 : 20}>
-                    por {handleMoney(item.price)}
-                  </ProductPrice>
+                      <ProductPrice marginTop={item.listPrice ? 0 : 20}>
+                        por {handleMoney(item.price)}
+                      </ProductPrice>
 
-                  { item.installments.length ? 
-                    <ProductPriceDetails>
-                      ou {item.installments[0].quantity}x 
-                      de { handleMoney(item.installments[0].value)}
-                    </ProductPriceDetails>
-                    : null
-                  }
-                  <button type="button">COMPRAR</button>
-                </div>
-              </ProductCard>
-              )
-            )
-          }
-        </Content>
+                      { item.installments.length ? 
+                        <ProductPriceDetails>
+                          ou {item.installments[0].quantity}x 
+                          de { handleMoney(item.installments[0].value)}
+                        </ProductPriceDetails>
+                        : null
+                      }
+                      <button type="button">COMPRAR</button>
+                    </div>
+                  </ProductCard>
+                  )
+                )
+              }
+            </CardsRow>
+          </Content>
+        </ContentWrapper>
         <Snackbar open={status === 'error'} autoHideDuration={5000} onClose={() => setStatus('')}>
           <MuiAlert elevation={6} variant="filled" severity="error" onClose={() => setStatus('')}>
             Ops! Algo de errado ocorreu ao listar os produtos. Tente novamente.
