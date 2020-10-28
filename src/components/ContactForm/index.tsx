@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LinearProgress, Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert'
 
-import { sendContact } from '../../Containers/Page/services';
+import { sendContact } from '../../Page/services';
 import { 
   Container, 
   ErrorMessage, 
