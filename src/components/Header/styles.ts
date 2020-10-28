@@ -14,7 +14,7 @@ right: 0;
 left: 0;
 padding: 0px 15px;
 
-@media(min-width:481px){
+@media(min-width:769px){
   flex-direction: row;
   justify-content: center;
 }
@@ -36,7 +36,7 @@ position: absolute;
 left:15px;
 top: 15px;
 
-@media(min-width: 481px) {
+@media(min-width: 769px) {
   display: none
 }
 `;
@@ -50,8 +50,10 @@ position: absolute;
 right: 15px;
 top: 15px;
 
-@media(min-width:481px){
-  position: sticky;
+@media(min-width:768px){
+  position: relative;
+  top: 0px;
+  margin-left: 16px;
 }
 `;
 
@@ -92,7 +94,7 @@ export const InputWrapper = styled.div`
     height: 18px;
   }
 
-  @media(min-width:481px){
+  @media(min-width:768px){
     margin: 0px 16px;
   }
 `;
@@ -122,7 +124,7 @@ margin-right: 16px;
   margin-left: 5px;
 }
 
-@media(max-width: 480px){
+@media(max-width: 768px){
   display: none;
 }
 @media(min-width: 1024px){
