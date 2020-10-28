@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { LinearProgress, Snackbar } from '@material-ui/core';
 import MuiAlert from '@material-ui/lab/Alert'
 
-import { sendContact } from '../../Page/services';
+import { sendContact } from './services';
 import { 
   Container, 
   ErrorMessage, 
@@ -23,7 +23,6 @@ const ContactForm: React.FC = () => {
     setStatus('');
     setLoading(true);
     e.preventDefault();
-    console.log(name, email);
     const data = {
       'name': name,
       'email': email,
@@ -34,7 +33,6 @@ const ContactForm: React.FC = () => {
       setName('');
       setEmail('');
     } catch(err) {
-      console.log(err);
       setStatus('error');
     }
     finally {
