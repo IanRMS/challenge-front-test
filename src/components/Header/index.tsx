@@ -1,6 +1,15 @@
 import React from 'react';
 
-import { Badge, Container, DrawerButton, InputWrapper, Logo, SearchInput, ShoppingWrapper, UserWrapper } from './styles';
+import { 
+  Badge, 
+  Container, 
+  DrawerButton, 
+  InputWrapper, 
+  Logo, 
+  SearchInput, 
+  ShoppingWrapper, 
+  UserWrapper
+} from './styles';
 import CorebizLogo from '../../assets/logo-corebiz.svg';
 import MenuIcon from '../../assets/menu-icon.svg';
 import ShoppingcarIcon from '../../assets/shoppingcar-icon.svg';
